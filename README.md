@@ -223,7 +223,7 @@ Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden ger�
 **3.**
 ```bash
     SELECT * FROM customer
-    WHERE store_id = 1
+    WHERE store_id=1
     ORDER BY last_name ASC
     LIMIT 4;
 ```
