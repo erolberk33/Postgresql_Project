@@ -90,7 +90,7 @@ Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden ger�
     AND rental_rate != 2.99 OR rental_rate != 4.99;
 ```
 
-  **ÖDEV-2**
+  **ÖDEV-2 **
 
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
 
