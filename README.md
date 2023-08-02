@@ -312,3 +312,47 @@ Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden ger�
     ORDER BY COUNT(*) DESC
     LIMIT 1;
 ```
+**ÖDEV-8**
+
+Aşağıdaki sorgu senaryolarını örnek veri tabanı üzerinden gerçekleştiriniz.
+
+**1-** Test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım ?
+
+**2-** Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim?
+
+**3-** Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım?
+
+**4-** Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım?
+
+
+
+
+**1.**
+```bash
+    CREATE TABLE employee (
+	id SERIAL PRIMARY KEY ,
+	name VARCHAR(50) NOT NULL,
+	birthday DATE,
+	email VARCHAR(100) 
+    );
+```
+
+**2.**
+```bash
+    SELECT * 
+    FROM film
+    WHERE title LIKE 'C%'; 
+
+```
+**3.**
+```bash
+    SELECT MAX(length) 
+    FROM film
+    WHERE rental_rate = 0.99; 
+```
+**4.**
+```bash
+    SELECT COUNT(DISTINCT replacement_cost) 
+    FROM film 
+    WHERE length > 150;
+```
