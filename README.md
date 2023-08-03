@@ -41,12 +41,6 @@ WHERE first_name = 'Penelope' AND last_name = 'Monroe';
 
 SELECT * FROM film WHERE NOT (rental_rate >= 5.00 OR rental_rate = 2.99);
 
-> Bu projelerin, işlerimizin ilerlemesini ve başarılarımızı gösterme
-> açısından önemli olduğunu düşünüyorum. İlgilendiğiniz projelerle
-> ilgili daha detaylı bilgilere ihtiyaç duyarsanız, lütfen bana
-> bildirin. Size bu konuda yardımcı olmaktan memnuniyet duyarım.
-
-
 
 ## PATİKA SQL EĞİTİMİ TÜM ÖDEVLER
 
