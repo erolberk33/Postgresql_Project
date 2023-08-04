@@ -15,7 +15,7 @@
     
 -   SQL, yapılandırılmış bir dildir ve belirli bir söz dizimine sahiptir. SQL kullanarak veritabanlarında sorgular yazabilir, veritabanı şemalarını oluşturabilir, veritabanı nesnelerini yönetebilir ve veritabanı işlemleri gerçekleştirebilirsiniz. SQL, farklı veritabanı yönetim sistemleri arasında genellikle taşınabilirlik sağlayan standart bir dil olarak kabul edilir, yani birçok veritabanı yönetim sistemi SQL'i destekler.
     
--   [W3Schools SQL SELECT](https://www.w3schools.com/sql/sql_select.asp)  'dan sql kodlarina calismalisin!!!
+-   [W3Schools SQL SELECT](https://www.w3schools.com/sql/sql_select.asp)  'dan sql kodlarina calismalisin!!
     
 -   [PostgreSQL Tutorial SQL SELECT](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/)  'burayi da kullan!!
     
