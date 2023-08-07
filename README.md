@@ -9,7 +9,7 @@
 
 -   SQL declerative bir dildir.
     
--   **SELECT**  komutu en cok kullanilan sql anahtar kelimeisidir
+-   **SELECT**  komutu en cok kullanilan Sql anahtar kelimeisidir
     
 -   SQL'de komutlar  **case sensitive**  degildir!
     
