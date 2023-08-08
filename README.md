@@ -9,13 +9,13 @@
 
 -   SQL declerative bir dildir.
     
--   **SELECT**  komutu en cok kullanilan Sql anahtar kelimeisidir
+-   **SELECT**  komutu en cok kullanilan sql anahtar kelimeisidir
     
 -   SQL'de komutlar  **case sensitive**  degildir!
     
 -   SQL, yapılandırılmış bir dildir ve belirli bir söz dizimine sahiptir. SQL kullanarak veritabanlarında sorgular yazabilir, veritabanı şemalarını oluşturabilir, veritabanı nesnelerini yönetebilir ve veritabanı işlemleri gerçekleştirebilirsiniz. SQL, farklı veritabanı yönetim sistemleri arasında genellikle taşınabilirlik sağlayan standart bir dil olarak kabul edilir, yani birçok veritabanı yönetim sistemi SQL'i destekler.
     
--   [W3Schools SQL SELECT](https://www.w3schools.com/sql/sql_select.asp)  'dan sql kodlarina calismalisin!!
+-   [W3Schools SQL SELECT](https://www.w3schools.com/sql/sql_select.asp)  'dan sql kodlarina calismalisin!!!
     
 -   [PostgreSQL Tutorial SQL SELECT](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/)  'burayi da kullan!!
     
@@ -40,6 +40,12 @@ WHERE first_name = 'Penelope' AND last_name = 'Monroe';
 -   **NOT**  it lists the excat opposite of the written statement;
 
 SELECT * FROM film WHERE NOT (rental_rate >= 5.00 OR rental_rate = 2.99);
+
+> Bu projelerin, işlerimizin ilerlemesini ve başarılarımızı gösterme
+> açısından önemli olduğunu düşünüyorum. İlgilendiğiniz projelerle
+> ilgili daha detaylı bilgilere ihtiyaç duyarsanız, lütfen bana
+> bildirin. Size bu konuda yardımcı olmaktan memnuniyet duyarım.
+
 
 
 ## PATİKA SQL EĞİTİMİ TÜM ÖDEVLER
@@ -307,6 +313,142 @@ Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden ger�
     LIMIT 1;
 ```
 **ÖDEV-8**
+
+Aşağıdaki sorgu senaryolarını örnek veri tabanı üzerinden gerçekleştiriniz.
+
+**1-** Test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım ?
+
+**2-** Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim?
+
+**3-** Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım?
+
+**4-** Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım?
+
+
+
+
+**1.**
+```bash
+    CREATE TABLE employee (
+	id SERIAL PRIMARY KEY ,
+	name VARCHAR(50) NOT NULL,
+	birthday DATE,
+	email VARCHAR(100) 
+    );
+```
+
+**2.**
+```bash
+insert into MOCK_DATA (id, Name, Birthday, Email) values (1, 'Frank Delaprelle', '6/3/1918', 'fdelaprelle0@kickstarter.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (2, 'Timmie Tompsett', '6/13/1988', 'ttompsett1@t.co');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (3, 'Adele Wilmut', '3/9/1935', 'awilmut2@chronoengine.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (4, 'Taylor Winman', '3/16/1913', 'twinman3@tinyurl.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (5, 'Idaline Dashwood', '4/28/1920', 'idashwood4@ebay.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (6, 'Melodee Chater', '2/5/1981', 'mchater5@clickbank.net');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (7, 'Grier Juschke', '5/9/1955', 'gjuschke6@tripadvisor.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (8, 'Aldon Bolsover', '8/6/2001', 'abolsover7@patch.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (9, 'Tammara Kinnoch', '12/25/1981', 'tkinnoch8@bbc.co.uk');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (10, 'Lewie Jonke', '2/3/2020', 'ljonke9@networksolutions.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (11, 'Deeann Hatherleigh', null, 'dhatherleigha@nationalgeographic.com')
+insert into MOCK_DATA (id, Name, Birthday, Email) values (12, 'Abie Elven', '7/15/2007', 'aelvenb@zdnet.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (13, 'Daffie Dundin', '2/18/1985', 'ddundinc@skype.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (14, 'Una Andrasch', null, 'uandraschd@ustream.tv');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (15, 'Caro Brimming', null, 'cbrimminge@fc2.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (16, 'Nealy Adao', null, 'nadaof@nifty.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (17, 'Judi Meekins', '4/2/1913', 'jmeekinsg@admin.ch');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (18, 'Orelie Goodison', '6/22/2007', 'ogoodisonh@i2i.jp');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (19, 'Guenna Devote', '4/6/2006', 'gdevotei@topsy.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (20, 'Derby La Wille', '1/8/1965', 'dlaj@pen.io');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (21, 'Dolley Grafhom', '8/31/1932', 'dgrafhomk@mlb.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (22, 'Osborne Reihill', '9/29/1948', 'oreihilll@artisteer.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (23, 'Lemmie Durbridge', null, 'ldurbridgem@usda.gov');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (24, 'Josselyn Grimm', '1/15/1991', 'jgrimmn@wikia.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (25, 'Rollo Sheard', '11/20/1918', 'rsheardo@dagondesign.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (26, 'Milton Oen', '3/18/1948', 'moenp@mozilla.org');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (27, 'Eddy Dunthorn', null, 'edunthornq@homestead.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (28, 'Latia Liversley', null, 'lliversleyr@nbcnews.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (29, 'Carmelle Nesbeth', '6/24/2021', 'cnesbeths@oracle.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (30, 'Glen Foote', '12/9/2018', 'gfootet@tiny.cc');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (31, 'Hillary Ocheltree', '3/26/1981', 'hocheltreeu@usda.gov');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (32, 'Saloma Cody', '9/29/1931', 'scodyv@naver.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (33, 'Katlin Sivil', '12/14/2021', 'ksivilw@fema.gov');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (34, 'Arlana Spavins', '4/28/2012', 'aspavinsx@histats.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (35, 'Caresa Aldin', '10/19/1984', 'caldiny@flickr.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (36, 'Sharl Rattray', '4/26/1983', 'srattrayz@ask.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (37, 'Jocelyne Kobpac', null, 'jkobpac10@npr.org');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (38, 'Gar Jacqueminot', null, 'gjacqueminot11@ihg.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (39, 'Dorothea Burnel', '4/15/2003', 'dburnel12@ning.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (40, 'Janie Ioannou', null, 'jioannou13@slashdot.org');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (41, 'Vidovic Esch', '2/8/1963', 'vesch14@gizmodo.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (42, 'Flossy Vinton', '3/9/2020', 'fvinton15@tiny.cc');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (43, 'Wandie Ties', '3/10/1936', 'wties16@ed.gov');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (44, 'Herminia Cabbell', '4/18/1917', 'hcabbell17@pen.io');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (45, 'Alika Leaburn', '7/16/1951', 'aleaburn18@usatoday.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (46, 'Gertrud Cottie', '1/9/1936', 'gcottie19@shareasale.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (47, 'Jerrome Ioan', '1/19/1910', 'jioan1a@sun.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (48, 'Delano De Lascy', '4/8/1916', 'dde1b@icq.com');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (49, 'Patin Dimbylow', '3/3/2019', 'pdimbylow1c@dmoz.org');
+insert into MOCK_DATA (id, Name, Birthday, Email) values (50, 'Glynda Schruurs', '5/27/1907', 'gschruurs1d@elpais.com');
+
+```
+**3.**
+```bash
+// İsim (name) sütununu güncellemek:
+
+    UPDATE employee
+    SET name = 'John Doe'
+    WHERE name = 'Coob';
+
+
+// Doğum günü (birthday) sütununu güncellemek:
+
+    UPDATE employee
+    SET birthday = '1990-06-15'
+    WHERE email = 'yserckd@home.pl';
+
+
+// E-posta (email) sütununu güncellemek:
+
+    UPDATE employee
+    SET email = 'johndoe@example.com'
+    WHERE birthday = '1950/04/10';
+
+
+// İsim ve doğum günü sütunlarını güncellemek:
+
+    UPDATE employee
+    SET name = 'Jane Smith',
+    birthday = '1985-03-20'
+    WHERE id = 4;
+
+
+// Tüm sütunları güncellemek:
+
+    UPDATE employee
+    SET name = 'Robert Johnson',
+    birthday = '1978-12-10',
+    email = 'robertjohnson@example.com'
+    WHERE id = 5; 
+```
+**4.**
+```bash
+    DELETE FROM employee
+    WHERE id = 44;
+
+    DELETE FROM employee
+    WHERE name ='Constantin';
+
+    DELETE FROM employee
+    WHERE name = 'Jane Smith' AND birthday = '1985-03-20';
+
+    DELETE FROM employee
+    WHERE email = 'umallinsonn@hp.com';
+
+    DELETE FROM employee
+    WHERE id >5
+    RETURNING *;
+```
+**ÖDEV-9**
 
 Aşağıdaki sorgu senaryolarını örnek veri tabanı üzerinden gerçekleştiriniz.
 
