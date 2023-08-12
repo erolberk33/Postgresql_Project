@@ -504,7 +504,7 @@ Aşağıdaki sorgu senaryolarını örnek veri tabanı üzerinden gerçekleştir
 
 **2.**
 ```bash
-    SELECT payment.payment_id, customer.first_name, customer.last_name
+    SELECT payment.payment_id,customer.first_name, customer.last_name
     FROM customer
     --LEFT JOIN payment ON customer.customer_id = payment.payment_id;
     LEFT JOIN payment ON payment.payment_id = customer.customer_id;
