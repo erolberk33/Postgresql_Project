@@ -504,7 +504,7 @@ Aşağıdaki sorgu senaryolarını örnek veri tabanı üzerinden gerçekleştir
 
 **2.**
 ```bash
-    SELECT payment.payment_id,customer.first_name, customer.last_name
+    SELECT payment.payment_id, customer.first_name, customer.last_name
     FROM customer
     --LEFT JOIN payment ON customer.customer_id = payment.payment_id;
     LEFT JOIN payment ON payment.payment_id = customer.customer_id;
@@ -566,4 +566,56 @@ Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden ger�
     SELECT first_name FROM actor 
     EXCEPT ALL
     SELECT first_name FROM customer;
+```
+
+**ÖDEV-12**
+
+Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
+
+**1-** film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+
+**2-** film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+
+**3-** film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız ?
+
+**4-** payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız ?
+
+
+
+
+**1.**
+```bash
+    SELECT title FROM film
+    WHERE length > (SELECT AVG(length) FROM film);
+```
+
+**2.**
+```bash
+    SELECT title, rental_rate FROM film
+    WHERE rental_rate >=
+    (
+	SELECT MAX(rental_rate) 
+	FROM film
+    );
+
+```
+**3.**
+```bash
+    SELECT title, rental_rate,replacement_cost FROM film
+    WHERE rental_rate =
+    (
+	SELECT MIN(rental_rate) FROM film
+    )
+    AND replacement_cost =
+    (
+	SELECT MIN(replacement_cost) FROM film
+    );
+```
+**4.**
+```bash
+    SELECT customer_id, COUNT(*) AS transaction_count
+    FROM payment
+    GROUP BY customer_id
+    ORDER BY transaction_count DESC
+    LIMIT 4;
 ```
